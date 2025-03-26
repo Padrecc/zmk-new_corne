@@ -562,6 +562,12 @@ rect.held, rect.combo.held {
 <a href="#Fn">
 <text x="0" y="24" class="key hold layer-activator">Fn</text>
 </a></g>
+<g class="combo combopos-0">
+<path d="M574,126 l-303,-33" class="combo"/>
+<path d="M574,126 l303,33" class="combo"/>
+<rect rx="6" ry="6" x="560" y="113" width="28" height="26" class="combo"/>
+<text x="574" y="126" class="combo tap">?</text>
+</g>
 </g>
 </g>
 <g transform="translate(40, 318)" class="layer-NUMBER">
