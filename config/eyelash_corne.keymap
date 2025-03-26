@@ -53,12 +53,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <150>;
             hold-trigger-key-positions = <7 22 36 37 23 8 9 24 38 39 25 10 11 26 40 41 27 12 42 43 44 45 46 47>;
-            hold-while-undecided;
         };
 
         hmr_c: hmr_c {
