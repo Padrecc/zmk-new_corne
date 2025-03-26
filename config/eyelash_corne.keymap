@@ -183,6 +183,16 @@
         tap-ms = <100>;
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        force_question_mark {
+            bindings = <&kp QUESTION>;
+            key-positions = <17 40>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
