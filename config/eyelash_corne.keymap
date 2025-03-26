@@ -125,6 +125,7 @@
             quick-tap-ms = <175>;
             hold-trigger-key-positions = <7 22 36 37 23 8 9 24 38 39 25 10 11 26 40 41 27 12 42 43 44 45 46 47>;
             hold-while-undecided;
+            require-prior-idle-ms = <150>;
         };
 
         hml_a: hml_a {
@@ -151,6 +152,7 @@
             quick-tap-ms = <175>;
             hold-trigger-key-positions = <42 43 44 45 46 47 28 13 0 1 14 29 30 15 3 2 16 31 32 17 4 5 18 33>;
             hold-while-undecided;
+            require-prior-idle-ms = <150>;
         };
 
         hmr_a: hmr_a {
