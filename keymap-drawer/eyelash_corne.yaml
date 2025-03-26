@@ -109,9 +109,9 @@ layers:
   - PG UP
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:arrow-up-bold$$
-  - '{'
-  - '}'
-  - '|'
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
+  - \
   - {type: held}
   - LEFT WIN
   - $$mdi:apple-keyboard-option$$
