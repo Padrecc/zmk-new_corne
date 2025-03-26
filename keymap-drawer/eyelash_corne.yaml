@@ -16,7 +16,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - NAV
   - {t: A, h: LEFT WIN}
-  - {t: S, s: '$$mdi:apple-keyboard-option$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
   - {t: D, h: '$$mdi:apple-keyboard-control$$'}
   - {t: F, s: '$$mdi:apple-keyboard-shift$$'}
   - G
@@ -26,7 +26,7 @@ layers:
   - H
   - {t: J, s: '$$mdi:apple-keyboard-shift$$'}
   - {t: K, h: '$$mdi:apple-keyboard-control$$'}
-  - {t: L, s: '$$mdi:apple-keyboard-option$$'}
+  - {t: L, h: '$$mdi:apple-keyboard-option$$'}
   - {t: ;, h: RWIN, s: ':'}
   - {t: '''', s: '"'}
   - $$mdi:apple-keyboard-control$$
