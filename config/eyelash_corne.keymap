@@ -34,6 +34,16 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+        hm: homerow-mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "homehow-mods";
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>; 
+        };
     };
 
     rgb_encoder: rgb_encoder {
