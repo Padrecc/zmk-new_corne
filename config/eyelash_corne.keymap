@@ -95,7 +95,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "BT_CLEAR";
             #binding-cells = <0>;
-            bindings = <&none>, <&none>, <&none>, <&none>, <&bt BT_CLR>;
+            bindings = <&none>, <&none>, <&bt BT_CLR>;
 
             tapping-term-ms = <300>;
         };
@@ -127,6 +127,16 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <45 46 47 0 13 28 29 14 1 2 15 30 31 16 3 4 17 32 5 18 33 42 43 44>;
         };
+
+        boot_load: boot_load {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "Shift/Caps Lock Tap Dance";
+            #binding-cells = <0>;
+            label = "BOOT_LOAD";
+            bindings = <&none>, <&none>, <&bootloader>;
+
+            tapping-term-ms = <300>;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -149,10 +159,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q            &kp W            &kp E         &kp R             &kp T                                    &mmv MOVE_UP                     &kp Y      &kp U              &kp I         &kp O             &kp P                &kp BSPC
-&mo 2      &hml LEFT_WIN A  &hml LEFT_ALT S  &hml LCTRL D  &hm LEFT_SHIFT F  &kp G                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp H      &hm RIGHT_SHIFT J  &hmr RCTRL K  &hmr RIGHT_ALT L  &hmr RWIN SEMICOLON  &kp SQT
-&kp LCTRL  &kp Z            &kp X            &kp C         &kp V             &kp B      &kp K_MUTE                    &mmv MOVE_DOWN                   &kp N      &kp M              &kp COMMA     &kp DOT           &kp FSLH             &langsw RCTRL 0
-                                             &lt 3 ESCAPE  &lt 1 SPACE       &kp ENTER                                                                 &kp SPACE  &lt 1 SPACE        &lt 3 ESCAPE
+&kp TAB    &kp Q            &kp W            &kp E         &kp R              &kp T                                    &mmv MOVE_UP                     &kp Y      &kp U               &kp I         &kp O             &kp P                &kp BSPC
+&mo 2      &hml LEFT_WIN A  &hml LEFT_ALT S  &hml LCTRL D  &hml LEFT_SHIFT F  &kp G                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp H      &hmr RIGHT_SHIFT J  &hmr RCTRL K  &hmr RIGHT_ALT L  &hmr RWIN SEMICOLON  &kp SQT
+&kp LCTRL  &kp Z            &kp X            &kp C         &kp V              &kp B      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp N      &kp M               &kp COMMA     &kp DOT           &kp FSLH             &langsw RCTRL 0
+                                             &lt 3 ESCAPE  &lt 1 SPACE        &kp ENTER                                                                 &kp SPACE  &lt 1 SPACE         &lt 3 ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -175,7 +185,7 @@
             bindings = <
 &trans     &none         &none     &none      &none      &none                                 &mmv MOVE_UP                     &kp PG_UP      &kp BACKSPACE  &kp UP      &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp PIPE
 &trans     &kp LEFT_WIN  &kp LALT  &kp LCTRL  &kp LSHFT  &none                 &mmv MOVE_LEFT  &mkp RCLK       &mmv MOVE_RIGHT  &kp PAGE_DOWN  &kp LEFT       &kp DOWN    &kp RIGHT       &kp MINUS        &kp EQUAL
-&soft_off  &none         &none     &none      &none      &none   &kp K_MUTE                    &mmv MOVE_DOWN                   &kp HOME       &kp END        &kp INSERT  &kp DELETE      &kp QMARK        &soft_off
+&soft_off  &none         &none     &none      &none      &none   &kp C_MUTE                    &mmv MOVE_DOWN                   &kp HOME       &kp END        &kp INSERT  &kp DELETE      &kp QMARK        &soft_off
                                    &trans     &trans     &trans                                                                 &trans         &trans         &trans
             >;
 
@@ -185,10 +195,10 @@
         Functional {
             display-name = "Fn";
             bindings = <
-&kp TAB  &kp F1        &kp F2        &kp F3        &kp F4       &kp F5                                    &mmv MOVE_UP                     &kp F6      &kp F7       &kp F8     &kp F9     &kp F10  &kp F11
-&trans   &kp LWIN      &kp LEFT_ALT  &kp LCTRL     &kp LSHFT    &none                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &none       &mkp LCLK    &mkp MCLK  &mkp RCLK  &none    &kp F12
-&trans   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_CLR    &bootloader  &sys_reset  &kp K_MUTE                    &mmv MOVE_DOWN                   &sys_reset  &bootloader  &none      &none      &none    &trans
-                                     &kp LEFT_ALT  &trans       &trans                                                                     &trans      &trans       &trans
+&kp TAB  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5                                    &mmv MOVE_UP                     &kp F6      &kp F7      &kp F8     &kp F9     &kp F10  &kp F11
+&trans   &kp LWIN      &kp LEFT_ALT  &kp LCTRL     &kp LSHFT   &none                     &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &none       &mkp LCLK   &mkp MCLK  &mkp RCLK  &none    &kp F12
+&trans   &bt BT_SEL 0  &bt BT_SEL 1  &bt_clear     &boot_load  &sys_reset  &kp C_MUTE                    &mmv MOVE_DOWN                   &sys_reset  &boot_load  &none      &none      &none    &trans
+                                     &kp LEFT_ALT  &trans      &trans                                                                     &trans      &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -196,10 +206,10 @@
 
         System {
             bindings = <
-&bootloader  &sys_reset  &trans  &trans  &trans  &trans                             &trans          &trans  &trans  &trans  &trans  &sys_reset  &bootloader
-&trans       &trans      &trans  &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans
-&trans       &trans      &trans  &trans  &trans  &trans  &rgb_ug RGB_TOG            &trans          &trans  &trans  &trans  &trans  &trans      &trans
-                                 &trans  &trans  &trans                                             &trans  &trans  &trans
+&none   &sys_reset  &trans  &trans  &trans  &trans                             &trans          &trans  &trans  &trans  &trans  &sys_reset  &none
+&trans  &trans      &trans  &trans  &trans  &trans                     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans
+&trans  &trans      &trans  &trans  &trans  &trans  &rgb_ug RGB_TOG            &trans          &trans  &trans  &trans  &trans  &trans      &trans
+                            &trans  &trans  &trans                                             &trans  &trans  &trans
             >;
 
             label = "SYS";
