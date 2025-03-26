@@ -34,6 +34,7 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
         hm: homerow-mods {
             compatible = "zmk,behavior-hold-tap";
             label = "homehow-mods";
@@ -42,7 +43,7 @@
             flavor = "tap-preferred";
             quick-tap-ms = <125>;
             global-quick-tap;
-            bindings = <&kp>, <&kp>; 
+            bindings = <&kp>, <&kp>;
         };
     };
 
@@ -67,7 +68,7 @@
             display-name = "QWERTY";
             bindings = <
 &kp TAB    &kp Q           &kp W           &kp E         &kp R             &kp T                                    &mmv MOVE_UP                     &kp Y      &kp U              &kp I         &kp O            &kp P               &kp BSPC
-&mo 2      &mt A LEFT_WIN  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp H      &mt RIGHT_SHIFT J  &mt RCTRL K   &mt RIGHT_ALT L  &mt RWIN SEMICOLON  &kp SQT
+&mo 2      &hm A LEFT_WIN  &hm LEFT_ALT S  &hm LCTRL D   &mt LEFT_SHIFT F  &kp G                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp H      &hm RIGHT_SHIFT J  &hm RCTRL K   &hm RIGHT_ALT L  &hm RWIN SEMICOLON  &kp SQT
 &kp LCTRL  &kp Z           &kp X           &kp C         &kp V             &kp B      &kp K_MUTE                    &mmv MOVE_DOWN                   &kp N      &kp M              &kp COMMA     &kp DOT          &kp FSLH            &kp RCTRL
                                            &lt 3 ESCAPE  &lt 1 SPACE       &kp ENTER                                                                 &kp SPACE  &lt 1 SPACE        &lt 3 ESCAPE
             >;
