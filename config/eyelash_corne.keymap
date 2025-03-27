@@ -153,6 +153,31 @@
             require-prior-idle-ms = <200>;
             hold-trigger-key-positions = <42 43 44 45 46 47 28 14 1 0 13 30 29 15 2 3 16 31 32 17 4 5 18 33>;
         };
+
+        hm_a: hm_a {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_A";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+        };
+
+        hm_c: hm_c {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM_C";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-while-undecided;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -187,10 +212,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q              &kp W              &kp E           &kp R                &kp T                                    &mmv MOVE_UP                     &kp Y      &kp U                 &kp I           &kp O               &kp P                  &kp BSPC
-&mo 2      &hml_a LEFT_WIN A  &hml_a LEFT_ALT S  &hml_c LCTRL D  &hml_s LEFT_SHIFT F  &kp G                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp H      &hmr_s RIGHT_SHIFT J  &hmr_c RCTRL K  &hmr_a RIGHT_ALT L  &hmr_a RWIN SEMICOLON  &kp SQT
-&kp LCTRL  &kp Z              &kp X              &kp C           &kp V                &kp B      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp N      &kp M                 &kp COMMA       &kp DOT             &kp FSLH               &langsw RCTRL 0
-                                                 &lt 3 ESCAPE    &lt 1 SPACE          &kp ENTER                                                                 &kp SPACE  &lt 1 SPACE           &lt 3 ESCAPE
+&kp TAB    &kp Q             &kp W             &kp E          &kp R                &kp T                                    &mmv MOVE_UP                     &kp Y      &kp U                 &kp I          &kp O              &kp P                 &kp BSPC
+&mo 2      &hm_a LEFT_WIN A  &hm_a LEFT_ALT S  &hm_c LCTRL D  &hml_s LEFT_SHIFT F  &kp G                    &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp H      &hmr_s RIGHT_SHIFT J  &hm_c RCTRL K  &hm_a RIGHT_ALT L  &hm_a RWIN SEMICOLON  &kp SQT
+&kp LCTRL  &kp Z             &kp X             &kp C          &kp V                &kp B      &kp C_MUTE                    &mmv MOVE_DOWN                   &kp N      &kp M                 &kp COMMA      &kp DOT            &kp FSLH              &langsw RCTRL 0
+                                               &lt 3 ESCAPE   &lt 1 SPACE          &kp ENTER                                                                 &kp SPACE  &lt 1 SPACE           &lt 3 ESCAPE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
