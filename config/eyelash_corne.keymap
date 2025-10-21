@@ -28,13 +28,6 @@
 
 / {
     behaviors {
-        td0: td0 {
-            compatible = "zmk,behavior-tap-dance";
-            display-name = "Shift/Caps Lock Tap Dance";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
-        };
-
         hm_s_l: hm_s_l {
             compatible = "zmk,behavior-hold-tap";
             label = "HM_S_L";
@@ -87,25 +80,6 @@
             require-prior-idle-ms = <150>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 28 29 0 1 2 3 4 5 13 14 15 16 17 18 28 29 30 31 32 33 42 43 44 45 46 47>;
-        };
-
-        lang_caps: lang_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LANG_CAPS";
-            #binding-cells = <0>;
-            bindings = <&kp LG(SPACE)>, <&kp CAPSLOCK>;
-
-            tapping-term-ms = <50>;
-        };
-
-        langsw: langsw {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LANGSW";
-            bindings = <&kp>, <&lang_caps>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            flavor = "tap-preferred";
         };
 
         bt_clear: bt_clear {
