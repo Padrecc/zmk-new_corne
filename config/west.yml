@@ -13,7 +13,8 @@ manifest:
       url: https://github.com/a741725193/zmk-new_corne
       revision: main
     - name: zmk
-      remote: zmkfirmware
+      remote: urob
+      #remote: zmkfirmware
       revision: main
       import: app/west.yml
     - name: zmk-helpers
